@@ -1,11 +1,13 @@
 package exercise.task_01;
 
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.within;
 
-class CalculatorTest {
+public class CalculatorTestAssertJ {
 
     @Test
     @DisplayName("Should return 3 for adding 1 and 2")
@@ -17,7 +19,7 @@ class CalculatorTest {
         int result = calculator.add(1, 2);
 
         //then
-        assertEquals(3, result);
+        assertThat(result).isEqualTo(3);
     }
 
     @Test
@@ -26,10 +28,15 @@ class CalculatorTest {
         Calculator calculator = new Calculator();
 
         //when
-        double result = calculator.divide(1.0, 1.0);
+        double result = calculator.divide(1.0, 3.0);
 
         //then
-        assertEquals(1.0, result);
+        assertThat(result).isCloseTo(0.333, within(0.001));
+
+    }
+
+    private void doNothing() {
+
     }
 
 }
