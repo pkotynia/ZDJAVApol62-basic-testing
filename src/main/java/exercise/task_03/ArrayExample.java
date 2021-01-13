@@ -15,7 +15,7 @@ public class ArrayExample {
 
     public String[] removeDuplicates(String[] array) {
 
-        //result list
+        //create result list
         List<String> result = new ArrayList<>();
 
         //iterate over array and add element to result if not yet present
